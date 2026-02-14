@@ -1,9 +1,9 @@
 Markdown
 
-Application de Gestion de Produits (Django CRUD)
+# Application de Gestion de Produits (Django CRUD)
 Cette application web développée avec Django permet de gérer un catalogue de produits organisés par catégories. Elle implémente les fonctionnalités complètes de création, lecture, mise à jour et suppression (CRUD).
 
-Fonctionnalités
+# Fonctionnalités
 Gestion des Catégories
 Liste, ajout, modification et suppression des catégories.
 Suppression en cascade (si une catégorie est supprimée, ses produits le sont aussi).
@@ -15,7 +15,7 @@ Interface Utilisateur
 Design responsive basé sur Bootstrap.
 Navigation fluide entre les produits et les catégories.
 Persistance de l'état isAdmin (localStorage) pour l'affichage conditionnel des boutons d'action.
-🛠️ Installation et Lancement
+# Installation et Lancement
 1. Cloner le projet
 git clone <url-du-depot>
 cd <nom-du-dossier>
