@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container">
+
+       <div class="col-md-6">
+            <form action="{% url 'ajoutCategorie' %}" method="post">
+            {% csrf_token %}
+            <label for="">Libelle :</label><input class="form-control" type="text" name="libelle"><br><br>
+            <label for="">Description :</label><input class="form-control" type="text" name="description"><br><br>
+            <button type="submit" class="btn btn-dark">Enregistrer</button>
+
+        </form>
+       </div>
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Libelle</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for v in cats %}
+                <tr>
+                    <td>{{v.id}}</td>
+                    <td>{{v.libelle}}</td>
+                    <td>{{v.description}}</td>
+                    <td>
+                        <a href="{% url 'supCategorie' v.id %}" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="{% url 'modifCategorie' v.id %}" class="btn btn-sm btn-primary">Update</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

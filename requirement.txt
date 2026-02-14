@@ -1,0 +1,5 @@
+django>=4.2,<5.1
+django-bootstrap5  # Optionnel, facilite l'intégration de Bootstrap
+asgiref>=3.6.0
+sqlparse>=0.4.4
+tzdata>=2023.3

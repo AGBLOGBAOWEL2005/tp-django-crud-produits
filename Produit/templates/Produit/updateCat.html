@@ -1,0 +1,14 @@
+{% extends 'layout.html '%}
+{% block content %}
+
+       <div class="col-md-4">
+            <form action="{% url 'modifierCat' %}" method="post">
+            {% csrf_token %}
+                <input type="hidden" name="id" value="{{cat.id}}">
+            <label for="">Libelle :</label><input class="form-control" value="{{cat.libelle}}" type="text" name="libelle"><br><br>
+            <label for="">Description :</label><input class="form-control" type="text" value="{{cat.description}}" name="description"><br><br>
+            <button type="submit" class="btn btn-dark">Enregistrer</button>
+
+        </form>
+       </div>
+{% endblock %}

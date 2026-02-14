@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <div class="container">
+        <div class="col-md-6">
+            <form action="{% url 'ajoutProduit' %}" method="post">
+                {% csrf_token %}
+                <label for="">Libelle</label><input class="form-control" type="text" name="libelle"><br><br>
+                <label for="">Prix</label><input type="number" class="form-control"  id="decimalInput" name="prix" step="any" inputmode="decimal" placeholder="0.00"><br><br>
+                <label for="">Quantité</label><input type="number" class="form-control"  id="decimalInput" name="quantite" step="any" inputmode="decimal" placeholder="0.00"><br><br>
+                <label for="categorie">Catégorie</label>
+                <select name="categorie" class="form-control" required>
+                    <option value="" selected disabled>Choisir une catégorie...</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat.id }}">{{ cat.libelle }}</option>
+                    {% endfor %}
+                </select><br>
+                <input type="submit" class="btn btn-dark" value="Enregistrer">
+            </form>
+        </div>
+    </div>
+{% endblock %}
